@@ -4,7 +4,7 @@
 
 name: "Blast Mining"
 description: Mines blocks in a 3x3 area.
-enabled: true
+enabled: false
 
 obtaining:
   table: true
