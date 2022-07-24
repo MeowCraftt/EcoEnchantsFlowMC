@@ -31,7 +31,7 @@ public class FineTuned extends EcoEnchant {
                              final int level,
                              @NotNull final BlockBreakEvent event) {
         if (block.hasMetadata("block-ignore")) {
-            return;
+            return; 
         }
 
         if (player.isSneaking() && this.getConfig().getBool(EcoEnchants.CONFIG_LOCATION + "disable-on-sneak")) {
