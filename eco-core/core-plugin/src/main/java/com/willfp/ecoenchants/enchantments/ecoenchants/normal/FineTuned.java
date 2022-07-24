@@ -9,6 +9,7 @@ import com.willfp.ecoenchants.enchantments.meta.EnchantmentType;
 import com.willfp.ecoenchants.enchantments.util.EnchantmentUtils;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.data;
 import org.bukkit.block.data.type
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -33,8 +34,10 @@ public class FineTuned extends EcoEnchant {
         if (block.hasMetadata("block-ignore")) {
             return; 
         }
+          
 
         if (player.isSneaking() && this.getConfig().getBool(EcoEnchants.CONFIG_LOCATION + "disable-on-sneak")) {
             return;
         }
-        if 
+      
+        if (block.getMaterial() == "GLASS" || block.getMaterial() == "GLASS_PANE") //dont know if im using org.bukkit.block.data correctly
