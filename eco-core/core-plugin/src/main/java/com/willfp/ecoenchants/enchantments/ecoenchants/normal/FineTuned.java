@@ -14,7 +14,8 @@ import org.bukkit.block.data.type
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.jetbrains.annotations.NotNull;
-
+import org.bukkit.potion.PotionEffect:
+import org.bukkit.potion.PotionEffectType:
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -31,6 +32,10 @@ public class FineTuned extends EcoEnchant {
                              @NotNull final Block block,
                              final int level,
                              @NotNull final BlockBreakEvent event) {
+      
+     public static int duration = 9999999;
+     public static int amplifier = 100;
+      
         if (block.hasMetadata("block-ignore")) {
             return; 
         }
@@ -40,4 +45,5 @@ public class FineTuned extends EcoEnchant {
             return;
         }
       
-        if (block.getMaterial() == "GLASS" || block.getMaterial() == "GLASS_PANE") //dont know if im using org.bukkit.block.data correctly
+        if (block.getType() == material.GLASS || block.getType() == material.GLASS_PANE || block.getType() == material.TINTED_GLASS ||  
+            p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, duration, amplifier));
